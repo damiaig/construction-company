@@ -1,0 +1,147 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('white-elegant-texture-background-style_23-2148432200.jpg.avif');
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    background-color: white; /* Add a background color for better readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better separation */
+    padding: 10px 0; /* Padding for top and bottom */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Adjust this as needed for your design */
+    margin: 0 auto; /* Center the nav-container */
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header li {
+    display: inline;
+    padding: 15px;
+}
+
+.logo-img {
+    width: 80px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+button {
+    background: none;
+    padding: 3px;
+    outline: none;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    border: none; /* Remove any existing borders */
+    position: relative; /* For the underline effect */
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust as needed */
+    width: 0;
+    height: 2px; /* Adjust as needed */
+    background-color: currentColor; /* Use the current text color */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+button:hover::after {
+    width: 100%; /* Underline spans the entire text */
+}
+
+.intro, .body2, .body3 {
+    margin: 20px;
+    text-align: center;
+}
+
+.para1, .para2, .para3 {
+    margin: 0 10px;
+}
+
+/* Cards styling */
+.parent-container, .parent-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.container, .container1, .container2, .container3 {
+    flex: 1 1 300px;
+    margin: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.card1, .card2, .card3, .card4 {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Footer styling */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: white;
+    color: black;
+    opacity: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for separation */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toolbar-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .toolbar-container li {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .intro, .body2, .body3 {
+        margin: 10px;
+    }
+
+    .container, .container1, .container2, .container3 {
+        margin: 5px;
+        padding: 10px;
+    }
+}

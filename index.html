@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KIT-TIN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added for responsiveness -->
+    <link rel="stylesheet" href="Home.css"> <!-- Minified CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a class="Home" href="index.html">
+                        <img src="Capture_d_écran_2024-06-18_à_10.37.54_AM-removebg-preview.png" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+                <ul class="toolbar-container">
+                    <li><a class="Home" href="index.html"><button class="toolbar">Home</button></a></li>
+                    <li><a class="About-us" href="About us.html"><button class="toolbar">About us</button></a></li>
+                    <li><a class="Contact-us" href="Contact-us.html"><button class="toolbar">Contact us</button></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="intro">
+        <h1 class="t1">Welcome</h1>
+        <br>
+        <p class="para1">
+            KIT-TIN LIMITED was established in 2005 to deliver engineering, procurement, and construction services to its clients.
+            Over the years, the company has built a strong reputation in the construction industry with cutting-edge designs and energy-efficient engineering solutions.
+        </p>
+    </div>
+    <div id="root"></div> <!-- React will mount here -->
+
+    <!-- Load React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react/umd/react.production.min.js" defer></script>
+    <script crossorigin src="https://unpkg.com/react-dom/umd/react-dom.production.min.js" defer></script>
+    <!-- Babel via CDN to compile JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
+    <!-- Your custom script here -->
+    <script type="text/babel">
+        const images = {
+            gtbank: [
+                'Capture d’écran 2024-06-21 à 7.59.53 AM.png',
+                'Capture d’écran 2024-06-21 à 8.00.05 AM.png',
+                'Capture d’écran 2024-06-21 à 8.01.18 AM.png',
+                'Capture d’écran 2024-06-21 à 8.00.40 AM.png'
+            ],
+            axaMansard: [
+                'Capture d’écran 2024-06-21 à 7.51.53 AM.png',
+                'Capture d’écran 2024-06-21 à 7.52.17 AM.png',
+                'Capture d’écran 2024-06-21 à 7.52.37 AM.png'
+            ],
+            ecobank: [
+                'Capture d’écran 2024-06-20 à 2.57.14 PM.png',
+                'Capture d’écran 2024-06-20 à 2.57.24 PM.png',
+                'Capture d’écran 2024-06-20 à 2.57.52 PM.png',
+                'Capture d’écran 2024-06-20 à 2.58.00 PM.png',
+                'Capture d’écran 2024-06-20 à 2.58.09 PM.png',
+                'Capture d’écran 2024-06-20 à 2.58.16 PM.png'
+            ],
+            tajbank: [
+                'Capture d’écran 2024-06-21 à 7.31.15 AM.png',
+                'Capture d’écran 2024-06-21 à 7.31.30 AM.png',
+                'Capture d’écran 2024-06-21 à 7.31.39 AM.png',
+                'Capture d’écran 2024-06-21 à 7.31.53 AM.png',
+                'Capture d’écran 2024-06-21 à 7.32.05 AM.png',
+                'Capture d’écran 2024-06-21 à 7.32.15 AM.png',
+                'Capture d’écran 2024-06-21 à 7.32.31 AM.png',
+                'Capture d’écran 2024-06-21 à 7.33.26 AM.png'
+            ]
+        };
+
+        function ImageSlider({ images }) {
+            const [currentIndex, setCurrentIndex] = React.useState(0);
+
+            React.useEffect(() => {
+                const intervalId = setInterval(() => {
+                    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+                }, 3000); // Change slide every 3 seconds
+
+                return () => clearInterval(intervalId); // Cleanup interval on component unmount
+            }, [images.length]);
+
+            const goToNextSlide = () => {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+            };
+
+            return (
+                <div className="slider-container">
+                    <div className="slider">
+                        <img src={images[currentIndex]} alt="Slide" className="slide" />
+                    </div>
+                    <button className="but" onClick={goToNextSlide}>Next</button>
+                </div>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <h1>Here are some of our past projects</h1>
+                    <h2>GTBank:</h2>
+                    <ImageSlider images={images.gtbank} />
+                    <h2>AXA Mansard:</h2>
+                    <ImageSlider images={images.axaMansard} />
+                    <h2>EcoBank:</h2>
+                    <ImageSlider images={images.ecobank} />
+                    <h2>TajBank:</h2>
+                    <ImageSlider images={images.tajbank} />
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    <footer>&copy; 2024 All Rights Reserved By KIT-TIN LTD</footer>
+</body>
+</html>
