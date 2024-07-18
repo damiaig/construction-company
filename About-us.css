@@ -38,6 +38,8 @@ header li {
 .logo-img {
     width: 80px; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the logo */
 }
 
 button {
@@ -115,6 +117,9 @@ footer {
     color: black;
     opacity: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for separation */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -134,9 +139,14 @@ footer {
 
     .logo-img {
         width: 80px;
+        display: block;
+        margin: 0 auto; /* Center the logo */
     }
 
-@media screen and (max-width: 480px) {
+    button {
+        text-decoration: none;
+    }
+
     .intro, .body2, .body3 {
         margin: 10px;
     }
@@ -144,6 +154,21 @@ footer {
     .container, .container1, .container2, .container3 {
         margin: 5px;
         padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro, .body2, .body3 {
+        margin: 10px;
+    }
+
+    .container, .container1, .container2, .container3 {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    button {
+        text-decoration: none;
     }
 }
 
