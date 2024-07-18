@@ -118,44 +118,27 @@ footer {
 @media screen and (max-width: 768px) {
     .nav-container {
         flex-direction: column;
-        align-items: flex-start;
+        margin: 0 20px;
     }
 
     header ul {
         display: flex;
         flex-direction: column;
         align-items: center;
-text-align:center;
     }
 
     header li {
         display: block;
         padding: 10px 0;
-
-text-align:center;
     }
 
     .logo-img {
-text-align:center;
         width: 80px;
-        display: block;
-        margin: 0 auto; /* Center the logo */
     }
 
     .intro {
         margin-top: 20px;
     }
-
-    .toolbar-container {
-        width: 100%;
-        text-align: center;
-    }
-
-    .toolbar-container li {
-        display: block;
-        margin: 5px 0;
-    }
-}
 
 @media screen and (max-width: 480px) {
     .intro, .body2, .body3 {
