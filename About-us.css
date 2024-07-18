@@ -115,15 +115,11 @@ footer {
     color: black;
     opacity: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for separation */
-}
-
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .nav-container {
         flex-direction: column;
         align-items: flex-start;
     }
-
 
     header ul {
         display: flex;
@@ -138,11 +134,14 @@ footer {
 
     .logo-img {
         width: 80px;
+        display: block;
+        margin: 0 auto; /* Center the logo */
     }
 
     .intro {
         margin-top: 20px;
     }
+
     .toolbar-container {
         width: 100%;
         text-align: center;
@@ -164,3 +163,4 @@ footer {
         padding: 10px;
     }
 }
+
