@@ -167,7 +167,8 @@ footer {
         margin: 5px;
         padding: 10px;
     }
-
+li{
+color:black;}
     button {
         text-decoration: none;
     }
