@@ -27,10 +27,11 @@ header {
 }
 
 header ul {
-color:black;
+
     list-style-type: none;
 }
 header li {
+color:black;
     display: inline;
     padding: 15px;
 }
