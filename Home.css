@@ -27,9 +27,9 @@ header {
 }
 
 header ul {
+color:black;
     list-style-type: none;
 }
-
 header li {
     display: inline;
     padding: 15px;
